@@ -1,6 +1,8 @@
 var express = require("express");
 var flash = require("connect-flash");
 var session = require("express-session");
+var passport = require("passport");
+var strategy = require("../Strategy");
 var router = express.Router();
 
 router.use(flash());
@@ -11,7 +13,9 @@ router.use(
     resave: false,
   })
 );
-
+passport.use(strategy);
+router.use(passport.session());
+router.use(passport.initialize());
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
