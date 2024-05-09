@@ -1,0 +1,38 @@
+<!-- form.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express-Authentication</title>
+    <link rel="icon" type="image/x-icon" href="/images/express-icon.png" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body style="margin: 100px">
+    <div class="container">
+      <h1><%= heading %></h1>
+
+      <% if (success) { %>
+      <div class="alert alert-success" role="alert"><%= success %></div>
+      <% } %> <% if (error) { %>
+      <div class="alert alert-danger" role="alert"><%= error %></div>
+      <% } %>
+
+      <form action="<%= link %>" method="post">
+        <input class="input" name="text" placeholder="Username" type="email" />
+        <br />
+        <br />
+        <input
+          class="input"
+          name="text"
+          placeholder="Password"
+          type="password"
+        />
+        <br />
+        <br />
+        <button type="submit" class="btn btn-primary"><%= heading %></button>
+      </form>
+    </div>
+  </body>
+</html>

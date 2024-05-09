@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Express-Authentication</title>
+    <title>Express-Authentication/title>
     <link rel="icon" type="image/x-icon" href="/images/express-icon.png" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body style="margin: 100px">
     <div class="container">
-      <h1>Express Local Authentication</h1>
+      <% if (typeof user !== 'undefined' && user) { %>
+      <h1>Welcome <%= user %></h1>
       <br />
       <br />
-      <a href="/login" class="btn">Login</a>
-      <a href="/register" class="btn">Register</a>
+      <a href="/logout" class="btn btn-primary btn-lg">Logout</a>
+      <% } %>
     </div>
   </body>
 </html>
