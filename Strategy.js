@@ -1,12 +1,13 @@
+const users = require("./MySQL");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const users = require("./MySQL");
 
-const strategy = new LocalStrategy((username, password, done) => {
-  const tempUser = users.getUser(username, password);
+const strategy = new LocalStrategy(async (username, password, done) => {
+  const tempUser = await users.getUser(username);
   if (!tempUser) {
     return done(null, false);
-  } else if (tempUser.password !== password) {
+  }
+  if (tempUser.password !== password) {
     return done(null, false);
   }
   return done(null, tempUser);
@@ -16,9 +17,9 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 passport.deserializeUser(async (id, done) => {
-  const user = users.getUserById(id);
+  const user = await users.getUserById(id);
   if (user) {
-    done(null, user);
+    return done(null, user);
   }
 });
 
