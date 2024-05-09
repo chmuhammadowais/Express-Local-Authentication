@@ -61,7 +61,11 @@ router.get("/register", function (req, res) {
 });
 router.get("/profile", function (req, res) {
   if (req.isAuthenticated()) {
-    res.status(200).render("profile", { user: req.user.username });
+    res
+      .status(200)
+      .set("Cache-Control", "no-cache, no-store, must-revalidate")
+      .set("Pragma", "no-cache")
+      .render("profile", { user: req.user.username });
   } else {
     res.status(401).redirect("/login");
   }
