@@ -1,5 +1,5 @@
 # Express-Local-Authentication
-This project is an Express.js application that implements a local authentication system using Passport.js, sessions, and routing. Users can register, log in, maintain authenticated sessions and logout from the session.
+This project is an Express.js application that implements a local authentication system using Passport.js, sessions, and routing. Users can register, log in, maintain authenticated sessions, and logout from the session.
 
 ## Features
 + User registration
@@ -33,3 +33,15 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
+## Screenshots
+### Welcome Screen
+<img width="960" alt="image" src="https://github.com/chmuhammadowais/Express-Local-Authentication/assets/89311067/623f4281-edb1-462b-8d87-b9875eb48e87">
+
+### Register Screen
+<img width="960" alt="image" src="https://github.com/chmuhammadowais/Express-Local-Authentication/assets/89311067/746b9c2c-dbac-4f1b-a796-a4a45df045d8">
+
+### Login Screen
+<img width="960" alt="image" src="https://github.com/chmuhammadowais/Express-Local-Authentication/assets/89311067/3c9be21e-3614-46bf-a945-273bee1ca053">
+
+### Home Screen
+<img width="960" alt="image" src="https://github.com/chmuhammadowais/Express-Local-Authentication/assets/89311067/a1637eec-60a9-4d11-971c-f7b2793962e7">
